@@ -8,6 +8,8 @@ Route::get('/', function () {
 
 use App\Http\Controllers\FacebookMessagesController;
 
-Route::get('/messages', [FacebookMessagesController::class, 'getMessages']);
-Route::post('/webhook', [App\Http\Controllers\MessengerWebhookController::class, 'handleWebhook']);
-Route::get('/webhook', [App\Http\Controllers\MessengerWebhookController::class, 'verifyWebhook']);
+// Route::get('/facebook/messages', [FacebookMessagesController::class, 'getMessages']);
+// Route::get('/messages', [FacebookMessagesController::class, 'showMessages']);
+Route::get('/conversations', [FacebookMessagesController::class, 'getConversations']);
+//Route::get('/conversations/{conversationId}/messages', [FacebookMessagesController::class, 'getMessages']);
+//Route::post('/messages/{messageId}/reply', [FacebookMessagesController::class, 'replyToMessage']);
